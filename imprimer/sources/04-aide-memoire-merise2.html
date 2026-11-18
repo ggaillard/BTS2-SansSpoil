@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Aide-mémoire Merise 2</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .grille { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 6mm; }
+  .bloc h2 { margin-top: 2mm; }
+  svg text { font-family: "Inter", "DejaVu Sans", Arial, sans-serif; }
+  .pieges li { margin-bottom: 1.2mm; }
+  .controle li { list-style: none; margin-left: -5mm; }
+  body { font-size: 9.7pt; }
+  h2 { margin-top: 3mm; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="bandeau"><strong>SANSSPOIL · BTS2 SIO SLAM</strong><span>Séance 2 — Réflexion sur table · Document 4</span></div>
+  <h1>Aide-mémoire Merise 2</h1>
+  <p class="sous-titre">À garder sous les yeux pendant toute la séance. Les exemples ne parlent pas de SansSpoil : à vous de transposer.</p>
+
+  <svg viewBox="0 0 700 150" width="100%" style="margin-bottom:2mm">
+    <defs>
+      <style>.e{fill:none;stroke:#1a1a1a;stroke-width:1.3}.a{fill:none;stroke:#1a1a1a;stroke-width:1.3}.t{font-size:12.5px;fill:#1a1a1a}.n{font-size:13px;font-weight:700;fill:#1a1a1a}.c{font-size:12.5px;font-weight:700;fill:#1a1a1a}.q{font-size:11px;fill:#555}</style>
+    </defs>
+    <!-- ÉTUDIANT -->
+    <rect class="e" x="10" y="20" width="150" height="78" rx="3"/>
+    <line x1="10" y1="44" x2="160" y2="44" stroke="#1a1a1a" stroke-width="1"/>
+    <text class="n" x="85" y="37" text-anchor="middle">ÉTUDIANT</text>
+    <text class="t" x="22" y="64">id_etudiant</text>
+    <line x1="22" y1="67" x2="92" y2="67" stroke="#1a1a1a" stroke-width="1"/>
+    <text class="t" x="22" y="84">nom</text>
+    <!-- liens -->
+    <line x1="160" y1="59" x2="275" y2="59" stroke="#1a1a1a" stroke-width="1.3"/>
+    <line x1="425" y1="59" x2="540" y2="59" stroke="#1a1a1a" stroke-width="1.3"/>
+    <text class="c" x="172" y="52">1,n</text>
+    <text class="c" x="505" y="52">0,n</text>
+    <!-- SUIVRE -->
+    <rect class="a" x="275" y="34" width="150" height="50" rx="20"/>
+    <text class="n" x="350" y="55" text-anchor="middle">SUIVRE</text>
+    <text class="t" x="350" y="73" text-anchor="middle">note_finale</text>
+    <!-- MODULE -->
+    <rect class="e" x="540" y="20" width="150" height="78" rx="3"/>
+    <line x1="540" y1="44" x2="690" y2="44" stroke="#1a1a1a" stroke-width="1"/>
+    <text class="n" x="615" y="37" text-anchor="middle">MODULE</text>
+    <text class="t" x="552" y="64">code_module</text>
+    <line x1="552" y1="67" x2="632" y2="67" stroke="#1a1a1a" stroke-width="1"/>
+    <text class="t" x="552" y="84">intitule</text>
+    <text class="q" x="10" y="124">Lecture : pour UN étudiant, combien de modules ? au moins 1, au plus plusieurs → 1,n (écrit côté ÉTUDIANT).</text>
+    <text class="q" x="10" y="142">La note dépend de l'étudiant ET du module : elle se place sur l'association, pas dans une entité.</text>
+  </svg>
+
+  <div class="grille">
+    <div class="bloc">
+      <h2>Les briques</h2>
+      <ul>
+        <li><strong>Entité</strong> (rectangle) : une « chose » dont on garde la trace et dont on parle au pluriel. Nom au singulier, en majuscules.</li>
+        <li><strong>Identifiant</strong> (souligné) : unique et stable. S'il peut changer, ce n'est pas un identifiant.</li>
+        <li><strong>Attribut</strong> : une information élémentaire, stockée une seule fois, jamais calculée.</li>
+        <li><strong>Association</strong> (ovale) : un lien entre entités, nommé par un verbe à l'infinitif. Elle n'a pas d'identifiant à elle.</li>
+      </ul>
+    </div>
+    <div class="bloc">
+      <h2>Lire une cardinalité</h2>
+      <p>Partez toujours de l'entité : « Pour <strong>UN</strong> étudiant, combien de… au minimum ? au maximum ? »</p>
+      <ul>
+        <li>Minimum : <strong>0</strong> (ce n'est pas obligatoire) ou <strong>1</strong> (c'est obligatoire).</li>
+        <li>Maximum : <strong>1</strong> (un seul) ou <strong>n</strong> (plusieurs).</li>
+        <li>La cardinalité s'écrit à côté de l'entité dont on part.</li>
+        <li>Chaque cardinalité doit pouvoir citer une règle de gestion.</li>
+      </ul>
+    </div>
+    <div class="bloc">
+      <h2>Association porteuse et ternaire</h2>
+      <ul>
+        <li>Une information qui dépend de <strong>plusieurs entités à la fois</strong> va sur l'association qui les relie.</li>
+        <li>Si elle dépend de <strong>trois entités à la fois</strong>, et qu'on ne peut pas la couper en deux liens sans perdre de sens, l'association est <strong>ternaire</strong>. Test : avec deux des trois, connaît-on la valeur ? Si non, il faut les trois.</li>
+      </ul>
+    </div>
+    <div class="bloc">
+      <h2>Héritage (Merise 2)</h2>
+      <p>Des entités qui partagent des attributs et des liens se rangent sous une entité générale ; chacune garde ce qui lui est propre.</p>
+      <ul>
+        <li><strong>X</strong> exclusion : jamais deux spécialisations à la fois.</li>
+        <li><strong>T</strong> totalité : toujours au moins une.</li>
+        <li><strong>XT</strong> partition : exactement une.</li>
+      </ul>
+      <p class="petit">Exemple : VÉHICULE → VOITURE, MOTO (XT).</p>
+    </div>
+  </div>
+
+  <h2>Six pièges classiques</h2>
+  <ol class="pieges">
+    <li>Stocker ce qui se calcule : un total, un rang, un classement, une progression.</li>
+    <li>Prendre pour identifiant une information qui peut changer.</li>
+    <li>Mettre une clé étrangère dans un MCD : elle n'apparaît qu'au passage au MLD.</li>
+    <li>Placer la même information à deux endroits.</li>
+    <li>Modéliser ce qui est hors périmètre, ou ce qui n'est pas une donnée (un outil, un événement ponctuel).</li>
+    <li>Garder une donnée personnelle dont on n'a pas besoin : on minimise (RGPD).</li>
+  </ol>
+
+  <h2>Mon MCD est fini quand…</h2>
+  <ul class="controle">
+    <li><span class="case"></span>chaque entité a un identifiant souligné qui ne change jamais ;</li>
+    <li><span class="case"></span>chaque donnée du dictionnaire est placée une seule fois, ou volontairement écartée ;</li>
+    <li><span class="case"></span>chaque cardinalité porte le numéro de la règle qui la justifie ;</li>
+    <li><span class="case"></span>les règles que le dessin ne peut pas garantir sont écrites en bas de la feuille.</li>
+  </ul>
+</div>
+</body>
+</html>

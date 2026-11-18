@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Gabarit MCD A3</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  @page { size: A3 landscape; margin: 10mm; }
+  .feuille { width: 400mm; height: 276mm; display: grid; grid-template-rows: 15mm 1fr 7mm; gap: 3mm; }
+  .entete { display: grid; grid-template-columns: 1.6fr 1fr 2fr 0.8fr; gap: 6mm; align-items: end; border-bottom: 1.4pt solid #1a1a1a; padding-bottom: 2mm; }
+  .entete .titre { font-size: 17pt; font-weight: 700; line-height: 1.1; }
+  .entete .titre span { display: block; font-size: 9pt; font-weight: 400; color: #555; margin-top: 1mm; }
+  .entete .champ { font-size: 10pt; border-bottom: 0.8pt solid #1a1a1a; padding-bottom: 1mm; }
+  .corps { display: grid; grid-template-columns: 1fr 92mm; gap: 5mm; min-height: 0; }
+  .zone-mcd {
+    border: 1pt solid #1a1a1a; border-radius: 2mm;
+    background-image: radial-gradient(circle, #a8a8a8 0.32mm, transparent 0.42mm);
+    background-size: 10mm 10mm;
+    background-position: 5mm 5mm;
+    position: relative;
+  }
+  .zone-mcd .mention { position: absolute; top: 2mm; left: 3mm; font-size: 8.5pt; color: #666; background: #fff; padding: 0 1.5mm; }
+  .cote { display: grid; grid-template-rows: auto 1fr auto auto; gap: 4mm; min-height: 0; }
+  .boite { border: 1pt solid #1a1a1a; border-radius: 2mm; padding: 2.5mm 3mm; }
+  .boite h2 { font-size: 10.5pt; margin: 0 0 1.5mm; }
+  .boite .petit { margin-bottom: 1.5mm; }
+  .numerotees { counter-reset: n; }
+  .numerotees div { counter-increment: n; height: 9mm; border-bottom: 0.7pt solid #9a9a9a; display: flex; align-items: flex-end; padding-bottom: 0.8mm; font-size: 9pt; color: #777; }
+  .numerotees div::before { content: counter(n) "."; width: 5mm; }
+  .simples div { height: 9mm; border-bottom: 0.7pt solid #9a9a9a; }
+  .pied-a3 { font-size: 8.8pt; color: #444; display: flex; justify-content: space-between; align-items: center; border-top: 0.8pt solid #1a1a1a; padding-top: 1.5mm; }
+  svg text { font-family: "Inter", "DejaVu Sans", Arial, sans-serif; }
+</style>
+</head>
+<body>
+<div class="feuille">
+  <div class="entete">
+    <div class="titre">SansSpoil — MCD Merise 2<span>BTS2 SIO SLAM · Séance 2 · Document 6</span></div>
+    <div class="champ">Groupe :</div>
+    <div class="champ">Membres :</div>
+    <div class="champ">Date :</div>
+  </div>
+
+  <div class="corps">
+    <div class="zone-mcd"><span class="mention">Zone du MCD — au crayon d'abord</span></div>
+
+    <div class="cote">
+      <div class="boite">
+        <h2>Légende</h2>
+        <svg viewBox="0 0 320 112" width="100%">
+          <rect x="4" y="6" width="70" height="40" rx="2" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+          <line x1="4" y1="20" x2="74" y2="20" stroke="#1a1a1a" stroke-width="1"/>
+          <text x="39" y="16" font-size="9" font-weight="700" text-anchor="middle" fill="#1a1a1a">ENTITÉ</text>
+          <text x="10" y="34" font-size="9" fill="#1a1a1a">identifiant</text>
+          <line x1="10" y1="36" x2="56" y2="36" stroke="#1a1a1a" stroke-width="0.9"/>
+          <text x="84" y="30" font-size="10" fill="#1a1a1a">entité, identifiant souligné</text>
+          <rect x="4" y="58" width="70" height="22" rx="11" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+          <text x="39" y="73" font-size="9" font-weight="700" text-anchor="middle" fill="#1a1a1a">VERBE</text>
+          <text x="84" y="73" font-size="10" fill="#1a1a1a">association (données dedans)</text>
+          <polygon points="39,88 29,106 49,106" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+          <text x="84" y="102" font-size="10" fill="#1a1a1a">héritage : X, T ou XT à côté</text>
+        </svg>
+        <p class="petit">Cardinalité « min,max » écrite côté entité, suivie du numéro de règle : 0,n (RG4).</p>
+      </div>
+
+      <div class="boite">
+        <h2>Règles que le MCD ne sait pas dire</h2>
+        <p class="petit">Ce que le dessin ne peut pas garantir. Elles deviendront du code plus tard.</p>
+        <div class="numerotees"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      </div>
+
+      <div class="boite">
+        <h2>Questions restantes pour Léa</h2>
+        <div class="simples"><div></div><div></div><div></div></div>
+      </div>
+
+      <div class="boite">
+        <h2>Le choix dont nous sommes le moins sûrs</h2>
+        <div class="simples"><div></div><div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pied-a3">
+    <span>Crayon d'abord, feutre à la fin · chaque cardinalité porte le numéro de sa règle · chaque donnée du dictionnaire est placée une seule fois</span>
+    <span>Feuille photographiée en fin de séance</span>
+  </div>
+</div>
+</body>
+</html>

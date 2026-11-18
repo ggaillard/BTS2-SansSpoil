@@ -1,0 +1,113 @@
+/* Feuille de style commune aux documents à imprimer — SansSpoil, BTS2 SIO SLAM */
+
+@page { size: A4; margin: 13mm 14mm 14mm 14mm; }
+@page a3 { size: A3 landscape; margin: 10mm; }
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  font-family: "Inter", "DejaVu Sans", Arial, sans-serif;
+  font-size: 10.2pt;
+  line-height: 1.38;
+  color: #1a1a1a;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page { page-break-after: always; }
+.page:last-child { page-break-after: auto; }
+
+.bandeau {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 8.3pt;
+  color: #555;
+  border-bottom: 1.2pt solid #1a1a1a;
+  padding-bottom: 1.6mm;
+  margin-bottom: 4.5mm;
+}
+.bandeau strong { color: #1a1a1a; letter-spacing: 0.02em; }
+
+h1 { font-size: 16.5pt; line-height: 1.2; margin: 0 0 1mm; }
+.sous-titre { color: #555; font-size: 9.3pt; margin: 0 0 4mm; }
+h2 { font-size: 11.5pt; margin: 4.5mm 0 1.4mm; }
+h3 { font-size: 10.4pt; margin: 3mm 0 1mm; }
+p { margin: 0 0 2mm; }
+ul, ol { margin: 0 0 2mm; padding-left: 5mm; }
+li { margin-bottom: 0.8mm; }
+
+.consigne {
+  border: 1pt solid #1a1a1a;
+  border-radius: 2mm;
+  padding: 2.4mm 3.4mm;
+  background: #f2f2ef;
+  margin-bottom: 3.5mm;
+}
+.consigne p:last-child { margin-bottom: 0; }
+
+.encadre {
+  border-left: 2.2pt solid #1a1a1a;
+  padding: 1mm 0 1mm 3mm;
+  margin: 2mm 0 3mm;
+}
+
+.identite {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: 4mm;
+  margin-bottom: 3.5mm;
+  font-size: 9.5pt;
+}
+.identite div { border-bottom: 0.8pt solid #1a1a1a; padding-bottom: 1mm; }
+
+.question { margin: 0 0 2.2mm; break-inside: avoid; }
+.question .intitule { font-weight: 600; margin-bottom: 1mm; }
+.question .num {
+  display: inline-block;
+  min-width: 5.5mm;
+  font-weight: 700;
+}
+
+/* Lignes d'écriture : une ligne tous les 7,5 mm */
+.lignes { width: 100%; }
+.ligne { height: 7.5mm; border-bottom: 0.6pt solid #a8a8a8; }
+
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 0.6pt solid #808080; padding: 1.4mm 1.8mm; vertical-align: top; text-align: left; }
+th { background: #ecece8; font-size: 8.8pt; font-weight: 600; }
+td { font-size: 9.3pt; }
+tr.vide td { height: 8.4mm; }
+td.exemple { color: #555; font-style: italic; }
+
+.pied {
+  position: fixed;
+  bottom: -8mm;
+  left: 0; right: 0;
+  font-size: 7.6pt;
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pliure {
+  margin-top: 3mm;
+  border-top: 1pt dashed #1a1a1a;
+  padding-top: 2mm;
+  position: relative;
+}
+.pliure .etiquette {
+  position: absolute;
+  top: -2.6mm;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 0 2mm;
+  font-size: 8pt;
+  font-weight: 600;
+}
+
+.petit { font-size: 8.6pt; color: #444; }
+.deux-colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.case { display: inline-block; width: 3.4mm; height: 3.4mm; border: 0.9pt solid #1a1a1a; vertical-align: -0.6mm; margin-right: 1mm; }

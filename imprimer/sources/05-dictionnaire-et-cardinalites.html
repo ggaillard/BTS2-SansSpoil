@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Dictionnaire des données et grille des cardinalités</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .dico td:nth-child(1) { width: 24%; }
+  .dico td:nth-child(2) { width: 30%; }
+  .dico td:nth-child(3) { width: 11%; }
+  .dico td:nth-child(4) { width: 13%; }
+  .dico td:nth-child(5) { width: 14%; }
+  .dico td:nth-child(6) { width: 8%; }
+  .card td { height: 10.2mm; }
+  .card th, .card td { text-align: center; }
+  .card td:first-child, .card th:first-child { text-align: left; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="bandeau"><strong>SANSSPOIL · BTS2 SIO SLAM</strong><span>Séance 2 — Réflexion sur table · Document 5 (recto)</span></div>
+  <div class="identite"><div>Groupe :</div><div>Membres :</div><div>Date :</div></div>
+  <h1>Dictionnaire des données</h1>
+  <p class="sous-titre">Une ligne par donnée trouvée dans le compte rendu. Une donnée écartée reste dans le tableau, avec la raison dans la colonne « Où ? ».</p>
+  <table class="dico">
+    <tr><th>Donnée</th><th>Signification</th><th>Type</th><th>Exemple</th><th>Où ? (entité, association, écartée)</th><th>Règle n°</th></tr>
+    <tr><td class="exemple">pseudo</td><td class="exemple">Nom affiché d'un membre, unique, modifiable</td><td class="exemple">texte (30)</td><td class="exemple">NightRider42</td><td class="exemple">MEMBRE</td><td class="exemple">RG1</td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <p class="petit" style="margin-top:2mm">Types possibles : entier, décimal, texte (longueur), date, booléen, liste de valeurs.</p>
+</div>
+
+<div class="page">
+  <div class="bandeau"><strong>SANSSPOIL · BTS2 SIO SLAM</strong><span>Séance 2 — Réflexion sur table · Document 5 (verso)</span></div>
+  <h1>Grille des cardinalités</h1>
+  <p class="sous-titre">Remplissez une ligne par association avant de la dessiner. Si vous n'arrivez pas à citer une règle, la cardinalité est une supposition : notez-la comme question pour Léa.</p>
+  <div class="consigne">
+    <p><strong>Phrase à compléter dans les deux sens :</strong> « Un(e) ______ peut / doit ______ au minimum ___ et au maximum ___ ______. »</p>
+    <p class="petit">Exemple hors sujet : un étudiant doit suivre au minimum 1 et au maximum n modules → 1,n côté ÉTUDIANT. Un module peut être suivi par 0 à n étudiants → 0,n côté MODULE.</p>
+  </div>
+  <table class="card">
+    <tr><th>Association (verbe)</th><th>Entité A</th><th>Pour UN(E) A<br>min , max</th><th>Entité B (et C)</th><th>Pour UN(E) B<br>min , max</th><th>Données portées</th><th>Règle n°</th></tr>
+    <tr><td class="exemple">SUIVRE</td><td class="exemple">ÉTUDIANT</td><td class="exemple">1 , n</td><td class="exemple">MODULE</td><td class="exemple">0 , n</td><td class="exemple">note_finale</td><td class="exemple">—</td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <h2>Héritage</h2>
+  <table>
+    <tr><th style="width:28%">Entité générale</th><th style="width:36%">Spécialisations</th><th style="width:18%">Contrainte (X, T, XT)</th><th>Règle n°</th></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td></tr>
+    <tr class="vide"><td></td><td></td><td></td><td></td></tr>
+  </table>
+</div>
+</body>
+</html>
