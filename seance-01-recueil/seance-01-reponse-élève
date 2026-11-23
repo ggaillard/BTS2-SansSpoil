@@ -1,0 +1,46 @@
+Livrables
+1. Dix questions préparées
+
+Vous devez les classer selon cinq catégories :
+
+    Qui ? Qui utilise l’application ? Qui peut publier ou lire quoi ?
+    Quelles données ? Quelles informations faut-il conserver ?
+    Quelles règles ? Quels conditions ou autorisations appliquer ?
+    Combien ? Combien d’utilisateurs, de contenus ou de connexions ?
+    Quelles contraintes ? Quelles limites techniques ou organisationnelles ?
+
+Exemples de questions pertinentes :
+
+    Combien de membres sont actuellement inscrits ?
+    Tout membre pourra-t-il publier une progression ou une astuce ?
+    Comment indique-t-on l’avancement d’un membre ?
+    Qu’est-ce qu’un niveau ou un chapitre suffit-il à définir ?
+    Peut-on modifier une progression après l’avoir enregistrée ?
+    Une astuce appartient-elle obligatoirement à un niveau précis ?
+    Les astuces sont-elles visibles selon l’avancement du membre ?
+    Qui peut créer ou supprimer une astuce ?
+    Peut-on attribuer plusieurs scores à un même membre ?
+    Peut-on supprimer un membre ou ses données ?
+
+    RG1 — Un membre appartient au club.
+    RG2 — Un membre dispose d’un identifiant unique.
+    RG3 — Un membre peut enregistrer sa progression dans plusieurs chapitres.
+    RG4 — Une progression appartient à un seul membre.
+    RG5 — Une astuce appartient à un seul chapitre ou niveau neutre.
+    RG6 — Un membre ne peut lire une astuce que si son niveau d’avancement est suffisamment élevé.
+    RG7 — Un auteur peut publier plusieurs astuces.
+    RG8 — Une astuce peut recevoir plusieurs votes.
+    RG9 — Un membre ne peut pas voter plusieurs fois pour la même astuce.
+    RG10 — Un défi peut avoir plusieurs scores, mais un membre n’a qu’un meilleur score enregistré pour chaque défi.
+
+Ces formulations sont un exemple, pas une copie du compte rendu attendu. Les réponses exactes doivent venir de l’entretien avec Léa.
+
+| Donnée | Signification | Type | Exemple | Règle liée |
+|---|---|---|---|---|
+| identifiant_membre | Identifiant unique du membre | Entier | 42 | RG2 |
+| nom_membre | Nom utilisé dans l’application | Texte | Léa | RG1 |
+| niveau | Niveau d’avancement du membre | Entier | 18 | RG6 |
+| score | Valeur obtenue à un défi | Entier | 12 500 | RG10 |
+| chapitre | Section neutre du jeu | Texte | Chapitre 3 | RG5 |
+| titre_astuce | Titre court de l’astuce | Texte | Astuce pour le niveau 3 | RG7 |
+| date_publication | Date de création de l’astuce | Date | 2026-11-23 | RG7 |
